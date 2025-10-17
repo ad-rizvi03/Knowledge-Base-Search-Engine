@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-g" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knowledge-base Search Engine</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
+    <script>
+      // Prevents FOUC (Flash of Unstyled Content)
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+    <!-- Prism JS for Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2UaKTpylo+LACHKEMycsUABLiRflXxMewutFq9iMCFUy5enAFfnTBL7UII5YZYg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" integrity="sha512-9khQRAUBomGik0dbTe7DE9xBwfxDUmvuc8M2J2mkQ5yd_MvsQsZN5cqM4ypUSjMOLVNNsG9LfCGI3YGkaF1A/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-SkmBfuA2hqjzEVpbaAZrrsFILURrANodSoYLWHpAUpaJypvrHZNCEPZEY2gaL/lp9ifw+NSSESysAUBwmGQRwg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@heroicons/react/": "https://aistudiocdn.com/@heroicons/react@^2.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.25.0",
+    "marked": "https://aistudiocdn.com/marked@^14.0.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100">
+    <script src="https://unpkg.com/pdfjs-dist@2.6.347/build/pdf.min.js"></script>
+    <script src="https://unpkg.com/mammoth@1.5.1/mammoth.browser.min.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

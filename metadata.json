@@ -1,0 +1,5 @@
+{
+  "name": "Knowledge-base Search Engine",
+  "description": "An AI-powered search engine that uses Retrieval-Augmented Generation (RAG) to answer questions based on user-uploaded documents. Ingest multiple documents, ask questions in natural language, and receive synthesized, accurate answers.",
+  "requestFramePermissions": []
+}
