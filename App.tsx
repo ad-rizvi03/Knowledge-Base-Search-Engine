@@ -5,7 +5,7 @@ import FileUploader from './components/FileUploader';
 import FileList from './components/FileList';
 import ChatInterface from './components/ChatInterface';
 import DocumentPreviewModal from './components/DocumentPreviewModal';
-import { SunIcon, MoonIcon, XCircleIcon, ChatBubbleBottomCenterTextIcon, ArrowRightOnRectangleIcon } from './components/Icons';
+import { SunIcon, MoonIcon, XCircleIcon, TrashIcon, ArrowRightOnRectangleIcon } from './components/Icons';
 import { useAuth } from './hooks/useAuth';
 import LoginPage from './components/LoginPage';
 
@@ -231,8 +231,8 @@ const RAGApplication: React.FC = () => {
     }
   }
 
-  const handleNewChat = () => {
-    if (window.confirm("Are you sure you want to start a new chat? The current conversation will be cleared.")) {
+  const handleClearChat = () => {
+    if (window.confirm("Are you sure you want to clear the chat history? This action cannot be undone.")) {
         setMessages([]);
     }
   }
@@ -276,9 +276,9 @@ const RAGApplication: React.FC = () => {
             <div className="flex justify-between items-center mb-4">
                 <h2 className="text-2xl font-semibold text-slate-800 dark:text-slate-200">2. Ask Questions</h2>
                 {messages.length > 0 && (
-                    <button onClick={handleNewChat} className="flex items-center text-xs text-indigo-500 dark:text-indigo-400 hover:underline" title="Start a new chat">
-                        <ChatBubbleBottomCenterTextIcon className="w-4 h-4 mr-1"/>
-                        New Chat
+                    <button onClick={handleClearChat} className="flex items-center text-xs text-red-500 dark:text-red-400 hover:underline" title="Clear chat history">
+                        <TrashIcon className="w-4 h-4 mr-1"/>
+                        Clear Chat
                     </button>
                 )}
             </div>
